@@ -33,14 +33,14 @@
     <title>Reproductor de Playlists de YouTube</title>
   </head>
 
-  <body>
+  <body class="theme-dark">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand ps-3" href="#">
             <img
               class="mb-1"
-              src="icon-youtube.png"
+              src="img/icon-youtube.png"
               width="45"
               height="30"
               alt=""
@@ -60,22 +60,16 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto menu" data-animation="center">
-              <li class="nav-item active">
-                <a class="nav-link">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">Acerca de</a>
-              </li>
               <li class="nav-item dropdown me-5 pe-5">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle justify-content-center"
                   href="#"
                   id="navbarDropdownMenuLink"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Temas
+                <i class="fas fa-palette me-1"></i> Temas
                 </a>
                 <ul
                   class="dropdown-menu p-2"
@@ -185,7 +179,7 @@
             <div class="col-md-12">
               <div class="id-empty">
                 <div class="alert alert-danger fade show p-2" role="alert">
-                  <strong>OPS!</strong> Debes ingresar un ID.
+                  <strong>¡OPS!</strong> Debes ingresar un ID.
                 </div>
               </div>
             </div>
@@ -220,7 +214,7 @@
           <div class="row d-felx align-content-center">
             <div class="col-md-12 d-flex justify-content-center">
               <img
-                src="error404.jpg"
+                src="img/error404.jpg"
                 alt="Error 404"
                 width="150"
                 height="150"
@@ -236,13 +230,13 @@
         </div>
       </div>
       <!-- Playlist y video -->
-      <div class="row align-items-md-stretch" id="cards">
+      <div class="row align-items-md-stretch " id="cards">
         <div class="col-md-6 pb-3" style="padding-left: 0px">
-          <div class="h-100 p-0 text-white bg-light rounded-3">
+          <div class="h-100 p-0 text-white rounded-3 bg-card-presentation">
             <div id="row-div" class="row align-items-center">
               <div class="col"></div>
               <div class="col pt-5" id="not-video">
-                <img src="arrow-right.png" alt="" width="190" height="180" />
+                <img src="img/arrow-right.png" alt="" width="190" height="180" />
                 <p
                   style="
                     margin-left: 5px;
@@ -266,9 +260,17 @@
         </div>
         <div class="col-md-6 pb-3">
           <div class="h-100 p-3 bg-light border rounded-3">
-            <h4 id="titlePlaylist"></h4>
+            <div class="row">
+              <div class="col-md-10 col-10 align-self-center" >
+                <h4 id="titlePlaylist"></h4>
+              </div>
+              <div class="col-md-2 col-2 d-flex flex-column justify-content-center" style="margin-top: -10px;">
+                <a type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                  <i class="fas fa-info-circle"></i>
+                </a>
+              </div>
+            </div>
             <hr class="dropdown-divider" />
-            <p id="descriptionPlaylist"></p>
             <div class="overflow-auto mb-3 mb-md-0 mr-md-3">
               <ul
                 id="contenido"
@@ -281,7 +283,44 @@
       </div>
     </div>
 
-    <footer class="pt-3 m-2 mb-1 border-top">&copy; 2021</footer>
+    <!-- Modal Info-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Detalles de playlist</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">Titulo:</div>
+              <div class="col-md-6"><p id="titlePlaylistModal"></p></div>
+              <div class="col-md-6">Descripción:</div>
+              <div class="col-md-6">
+                <p id="descriptionPlaylist"></p>
+              </div>
+              <div class="col-md-6">Creador:</div>
+              <div class="col-md-6">
+                <p id="creadorPlaylist"></p>
+              </div>
+              <div class="col-md-6">Fecha de creación:</div>
+              <div class="col-md-6">
+                <p id="fechaPlaylist"></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="navbar footer fixed-bottom bg-dark footer-shadow content container-fluid">
+      <div class="container text-center"></div>
+        <small class="text-footer">Ana Karina Vergara Guzmán &copy; YoutubeList</small>
+      </div></div>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=function"></script>
