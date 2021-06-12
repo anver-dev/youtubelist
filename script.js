@@ -106,7 +106,7 @@ $(document).ready(function () {
   var URLPlaylist = "https://www.googleapis.com/youtube/v3/playlists";
 
   // Llave obtenida de google
-  var APIKey = "";
+  var APIKey = "AIzaSyCmR5tGANYnZptvkmKx_mx70PGdeCFwJGo";
 
   // Funcion para evento click en boton buscar
   btnSearch.click(function () {
